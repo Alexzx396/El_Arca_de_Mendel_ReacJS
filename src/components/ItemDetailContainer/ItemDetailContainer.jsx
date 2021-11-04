@@ -11,10 +11,14 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         GetFetchDetail
-        .then(response => {        
+        .then(response => {
+            console.log('Llamando a las API') 
             setDetail(response.find(prod => prod.id === productId))
         })
         .catch (error => alert("Error:", error))
+        .finally(()=> console.log(false))
+        
+        
     },[productId])   
 
     return (

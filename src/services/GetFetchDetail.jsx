@@ -20,7 +20,7 @@ const catalogeDetail = [
 
     { id:"0003", 
     categorie:"Cactus",
-    brand:"Astrophytum",
+    title:"Astrophytum",
     description:"Semillas de cactus. son 20 unidades por pack. semillas importadas de alemania. porcentaje de germinibilidad 90%(comprobado en laboratorio)",
     brand:"Plantastik",
     price:5.999,  
@@ -166,8 +166,10 @@ const catalogeDetail = [
 
 const GetFetchDetail = new Promise((resolve, reject) =>{
     setTimeout(() =>{
-        resolve(catalogeDetail)
+        resolve(catalogeDetail);
+        reject('400 not found')
     }, 2000)
+    
 })
 
 export default GetFetchDetail

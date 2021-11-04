@@ -14,10 +14,11 @@ const ItemListContainer = () => {
 
         if (categoryId) {
             GetFetchList
-            .then(response => {        
+            .then(response => {
+                console.log('Llamando a las API')         
                 setProduct(response.filter(prod => prod.categorie === categoryId))
             })
-            .catch (error => alert("Error:", error))
+            .catch (error => alert("Error:", error)) 
         }
         
         else {

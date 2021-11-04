@@ -10,7 +10,7 @@
     border-radius:5px;
     border-style:none;
     padding:10px;
-    margin:5px 30px 5px 30px;
+    margin:5px 10px 5px 30px;
 }
 
 .count-buttom:disabled {
@@ -20,7 +20,7 @@
 .count-display {
     color:black;
     padding:10px;
-    margin:5px 30px 5px 30px;
+    margin:5px 10px 5px 20px;
 }
 
 .count-add {
@@ -28,5 +28,11 @@
     background-color:lightgray;
     border-radius:5px;
     border-style:none;
-    padding:10px;
+    padding:5px;
+}
+
+@media (max-width:480px) {
+    .product-card {
+        width:80%;
+    }
 }
