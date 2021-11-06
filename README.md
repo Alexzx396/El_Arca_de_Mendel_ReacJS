@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Summary: 
+
+Project: E-coomers sale of seeds: Cactus, Succulents, Exotics. The project seeks to sell seeds from different parts of the world to collectors or people who want to have their own species with quality genetics.
