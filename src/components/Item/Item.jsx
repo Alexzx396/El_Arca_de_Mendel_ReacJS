@@ -9,9 +9,9 @@ const Item = ({prod}) => {
                 <Link to={`/producto/${prod.id}`}><img className="product-img" src={prod.pictureUrl} alt={prod.title}/></Link>
                 <h5 className="product-title">{prod.title}</h5>
                 <p className="product-price">$ {prod.price}</p>
-                <Link to={`/producto/${prod.id}`}><button className="product-buttom">Más información</button></Link>
+                <Link to={`/producto/${prod.id}`}><button src={prod.description} className="product-buttom">Más información</button></Link>
                 <ItemCount initial={1} stock={prod.stock}/>
-            </div>
+            </div> 
     )
 }
 

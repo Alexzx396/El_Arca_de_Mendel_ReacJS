@@ -4,6 +4,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import './App.css';
 import Footer from './components/Footer/Footer';
+import CartWidget from './components/CartWidget/CartWidget';
 
 function App() {
   return (

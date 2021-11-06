@@ -29,8 +29,8 @@ const ItemCount = ({initial, stock}) =>{
                 ? true : false }>+</button>
 
             {cambiarBoton ?
-                <Link to='/CartWidget'>
-                    <button className="count-add" >Terminar Compra</button> 
+                <Link to="/categoria/CartWidget">
+                    <button className="count-add" >Terminar Compra </button> 
                 </Link> :  <button className="count-add" onClick={onAdd}> Agregar </button> 
             }
 

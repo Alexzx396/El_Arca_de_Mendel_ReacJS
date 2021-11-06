@@ -14,8 +14,10 @@ const NavBar = () => {
                 <li><Link to="/categoria/Exoticas">Exoticas</Link></li>
                 <li><Link to="/categoria/Contacto">Contacto</Link></li>
             </ul>
-            <CartWidget className="cart"/>
-        </nav>
+            <div>
+            <Link to="/categoria/CartWidget"> <img className="navbar-cart" src="../assets/Iconos/carroverde2.png" alt="Carrito"/></Link>
+            </div>
+  </nav>
     )
 }
 

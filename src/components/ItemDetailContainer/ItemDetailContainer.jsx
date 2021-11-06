@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         GetFetchDetail
         .then(response => {
-            console.log('Llamando a las API') 
+            console.log('Llamando a las API') //alguna accion con la respuesta
             setDetail(response.find(prod => prod.id === productId))
         })
         .catch (error => alert("Error:", error))
