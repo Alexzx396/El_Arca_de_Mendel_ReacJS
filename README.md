@@ -14,13 +14,20 @@ React js => esta App fue creada con => create react App
 Estado del Proyecto:
 
 CartWidge => Componente para mostrar en la barra de navegacion la cantidad seleccionada, para su futura compra en la pagina 
+
 ItemCount => Componente que permite agregar(+) y disminuir(-) productos al carrito de compras, ademas de mensajes de alert con productos y cantidad seleccionada. 
+
 ItemDetailContainer => muestra los detalles del item selecionado "ItemDetail" en donde ingresamos la cantidad y que finalmente agregaremos al carro de compras. 
+
 ItemListContainer => en esta seccion se muestra el catalogo, llamando a los componentes : Item y ItemList.
+
 NavBar => Barra de Navegacion de la pagina (Home, Cactus, Suculentas, exoticas, nosotros, contacto).
+
+
 Servies => {
 			GetFetchDetail => En esta seccion estan los detalles del producto (id, categorias, title, description, brand, price, pictureUrl, stock)
       GetFetchDetail => En esta seccion estan los productos finales (contiene el catalogo) (id, categorias, title, price, pictureUrl, stock) }
+      
 			
 Avance del proyecto:
 
