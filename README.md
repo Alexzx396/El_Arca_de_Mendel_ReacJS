@@ -32,7 +32,7 @@ Servies => {
 Avance del proyecto:
 
 Home =>
-![homo mendel](https://user-images.githubusercontent.com/85139914/140662042-5392bef3-17d0-41eb-8280-72e89be79244.png)
+![home mendel](https://user-images.githubusercontent.com/85139914/140662042-5392bef3-17d0-41eb-8280-72e89be79244.png)
 
 Description =>
 ![foto description](https://user-images.githubusercontent.com/85139914/140663610-1646ef08-be01-412f-ae6f-773ca845ea1c.png)
