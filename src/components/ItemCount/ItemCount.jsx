@@ -15,7 +15,7 @@ const ItemCount = ({initial, stock}) =>{
     }
 
     const onAdd = () => {
-        alert(`Agregaste ${count} Producto(s) a tu carrito`);
+        alert(`Agregaste ${count} producto(s) a tu carrito`);
         setState(initial);
         setCambiarBoton(true);
         console.log(count) 
