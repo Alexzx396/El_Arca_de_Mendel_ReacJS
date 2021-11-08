@@ -129,6 +129,7 @@ const cataloge = [
     pictureUrl:"../assets/Cactus/Lithops aucampiae/lithops-aucampiae-cv-rudesheim-rubi-s-785.jpg", 
     stock:20 },
 
+    
 ];
 
 const GetFetchList = new Promise((resolve, reject) =>{

@@ -1,10 +1,9 @@
 import {Link} from "react-router-dom"
-import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
 const NavBar = () => {
     return (
-        <nav className="navbar">
+        <nav className="navbar" expand="lg" bg="dark" variant="dark" fixed="top">
             <Link  className="logo" to="/"> <img className="logo-img" src="../assets/logo/logo-Arca.png" alt="Arca-de-mendel" width= "160px" /></Link>
             <ul className="menu">
                 <li><Link to="/">Home</Link></li>

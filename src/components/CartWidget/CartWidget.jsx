@@ -1,11 +1,13 @@
 import './CartWidget.css';
+import { Link } from 'react-router-dom'
 
 
-const CartWidget = () => {
+const CartWidget = (count) => {
     return (
-        <button className="navbar-cart">
-            <img src="../assets/Iconos/carroverde2.png" alt="Carrito"/>
-        </button>
+            <div>
+                <Link to="/categoria/CartWidget" className="count-add">
+                </Link>
+            </div>
     )
 }
 

@@ -157,7 +157,7 @@ const catalogeDetail = [
     categorie:"Suculentas", 
     title:"Lithops Aucampie", 
     description:"Semillas de cactus. semillas importadas de alemania. porcentaje de germinibilidad 90%(comprobado en laboratorio)",
-    brand:"Cantidad: 20 semillas",
+    brand:"Cantidad: 20 semillas Pureza: 95%",
     price:5.999, 
     pictureUrl:"../assets/Cactus/Lithops aucampiae/lithops-aucampiae-cv-rudesheim-rubi-s-785.jpg", 
     stock:20 },

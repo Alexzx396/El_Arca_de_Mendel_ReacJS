@@ -1,6 +1,6 @@
 .navbar {
     background-color:rgb(115, 202, 0);
-    padding:20px;
+    padding:10px;
 }
 
 nav ul {
@@ -17,7 +17,6 @@ nav ul li {
         display:grid;
         grid-template-areas:
         "logo cart",
-        "logo logo",
         "menu menu";
     }
 
