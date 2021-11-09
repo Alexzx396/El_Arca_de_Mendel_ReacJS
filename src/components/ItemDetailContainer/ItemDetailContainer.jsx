@@ -18,7 +18,9 @@ const ItemDetailContainer = () => {
         .finally(()=> console.log(false))
         
         
-    },[productId])   
+    },[productId])  
+    
+    console.log(detail, 'Soy el producto en el container')
 
     return (
             <div className="detail-container">

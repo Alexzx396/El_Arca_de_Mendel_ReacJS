@@ -7,10 +7,10 @@
 .count-buttom {
     color:white;
     background-color:green;
-    border-radius:5px;
+    border-radius:50px;
     border-style:none;
     padding:10px;
-    margin:5px 10px 5px 30px;
+    margin:4px;
 }
 
 .count-buttom:disabled {
@@ -26,9 +26,11 @@
 .count-add {
     color:green;
     background-color:lightgray;
-    border-radius:5px;
+    border-radius:10px;
     border-style:none;
-    padding:5px;
+    padding:15px;
+    margin: 4px;
+    
 }
 
 @media (max-width:480px) {

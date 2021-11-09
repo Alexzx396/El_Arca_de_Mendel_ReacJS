@@ -1,24 +1,26 @@
-import { useState } from 'react';
+import { useState} from 'react';
 import './ItemCount.css';
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 
-const ItemCount = ({initial, stock}) =>{
+const ItemCount = ({initial, stock, onAdd}) =>{
     const [count, setState] = useState(initial);
     const [cambiarBoton, setCambiarBoton] = useState(false)
     
-    const diminish = () => {
-        setState(count-1);     
-    }   
-    const increase = () => {
+    const handlerAdd=()=> {
         setState(count+1)      
     }
 
-    const onAdd = () => {
-        alert(`Agregaste ${count} producto(s) a tu carrito`);
-        setState(initial);
-        setCambiarBoton(true);
-        console.log(count) 
+    const handlerRm=()=> {
+        setState(count-1)     
+    }   
+    
+    const handlerOnAdd = ()=> { 
+        alert(`Agregaste ${count} producto(s) a tu carrito`)
+        onAdd(count)
+        setState(initial)
+        setCambiarBoton(true)
+        
         // window.confirm('Agregado!')
 }
 
@@ -27,19 +29,27 @@ const ItemCount = ({initial, stock}) =>{
     return (
         <div className="count-container">
             <div className="count-selectors">
-                <button className="count-buttom"onClick={diminish} disabled={(count<=initial) 
+                <button className="count-buttom" onClick={handlerRm} disabled={(count<=initial) 
                 ? true : false}>-</button>
                 <div className="count-display">{count}</div>
-                <button className="count-buttom" onClick={increase} disabled={ (count>=stock) 
+                <button className="count-buttom" onClick={handlerAdd} disabled={ (count>=stock) 
                 ? true : false }>+</button>
+            
 
-            {cambiarBoton ?
-                <Link to="/categoria/CartWidget">
-                    <button className="count-add"> Terminar Compra </button> 
-                </Link> : <button className="count-add" onClick={onAdd}> Agregar </button>
-              
-            }
-    
+                <div className="count-container">
+                {cambiarBoton ?
+
+                    <div className="count-selectors">
+                        <Link to="/categoria/CartWidget">
+                            <button className="count-add" >Terminar</button>           
+                        </Link>
+                        <Link to="/" >
+                            <button className="count-add" >Seguir</button>      
+                        </Link>
+                    </div> : <button onClick={handlerOnAdd} className="count-add" > Agregar </button>  
+                }
+                </div>
+
             </div>
         </div>
     )
