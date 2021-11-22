@@ -9,6 +9,7 @@ tecnologias:
 Javascript
 Html5
 Css3
+GitHub
 React js => esta App fue creada con => create react App
 
 Estado del Proyecto:
