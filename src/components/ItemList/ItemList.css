@@ -1,20 +1,20 @@
 @media (max-width:480px) {
 
-    .product-container {
+    .item-container {
         display:grid;
         grid-template-columns:1fr;
         justify-content:center;
         align-items:center;
     }
 
-    .product-container:first-child {
+    .item-container:first-child {
         margin-top:25px;
     }
 }
 
 @media (min-width:481px) {
 
-    .product-container {
+    .item-container {
         display:grid;
         grid-template-columns:1fr 1fr 1fr;
         gap:15px;

@@ -3,50 +3,48 @@ import './ItemCount.css';
 import { Link} from 'react-router-dom'
 
 
-const ItemCount = ({initial, stock, onAdd}) =>{
-    const [count, setState] = useState(initial);
+const ItemCount = ({initial, stock, addToCart}) =>{
+    const [quantity, setQuantity] = useState(initial);
     const [cambiarBoton, setCambiarBoton] = useState(false)
     
     const handlerAdd=()=> {
-        setState(count+1)      
+        setQuantity(quantity+1);      
     }
 
     const handlerRm=()=> {
-        setState(count-1)     
+        setQuantity(quantity-1);     
     }   
     
-    const handlerOnAdd = ()=> { 
-        alert(`Agregaste ${count} producto(s) a tu carrito`)
-        onAdd(count)
-        setState(initial)
-        setCambiarBoton(true)
-        
-        // window.confirm('Agregado!')
+    const addToCartHandler = ()=> { 
+        alert(`Agregaste ${quantity} producto(s) a tu carrito`)
+        addToCart(quantity)
+        setCambiarBoton(true)       
 }
 
 
     
     return (
-        <div className="count-container">
-            <div className="count-selectors">
-                <button className="count-buttom" onClick={handlerRm} disabled={(count<=initial) 
+        <div className="quantityt-container">
+            <div className="quantity-selectors">
+                <button className="quantity-buttom" onClick={handlerRm} disabled={(quantity<=initial) 
                 ? true : false}>-</button>
-                <div className="count-display">{count}</div>
-                <button className="count-buttom" onClick={handlerAdd} disabled={ (count>=stock) 
+                <div className="quantity-display">{quantity}</div>
+                <button className="quantity-buttom" onClick={handlerAdd} disabled={(quantity>=stock) 
                 ? true : false }>+</button>
             
 
-                <div className="count-container">
-                {cambiarBoton ?
-
-                    <div className="count-selectors">
-                        <Link to="/categoria/CartWidget">
-                            <button className="count-add" >Terminar</button>           
+                <div className="quantity-container">
+                {cambiarBoton 
+                
+                ?   <div className="quantity-selectors"> 
+                       <Link to="/cart">
+                            <button className="quantity-add" >Terminar</button>           
                         </Link>
                         <Link to="/" >
-                            <button className="count-add" >Seguir</button>      
+                            <button className="quantity-add" >Seguir</button>      
                         </Link>
-                    </div> : <button onClick={handlerOnAdd} className="count-add" > Agregar </button>  
+                    </div> 
+                :   <button onClick={addToCartHandler} className="quantity-add" > Agregar </button>  
                 }
                 </div>
 

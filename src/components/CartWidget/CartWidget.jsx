@@ -1,14 +1,19 @@
+import {Link} from 'react-router-dom';
+import {useCartContext} from '../CartContext/CartContext';
 import './CartWidget.css';
-import { Link } from 'react-router-dom'
 
+const CartWidget = () => {
 
-const CartWidget = (count) => {
-    return (
-            <div>
-                <Link to="/categoria/CartWidget" className="count-add">
+        const {itemQuantity} = useCartContext()
+
+            return (
+                <Link to="/cart" className="cartwidget-container">
+                    <button className="cartwidget">
+                    <p className="cartwidget-quantity">{itemQuantity}</p>
+                    <img src="../assets/iconos/carroverde2.png" alt="Carrito"/>
+                    </button>
                 </Link>
-            </div>
-    )
-}
+            )
+        }
 
 export default CartWidget

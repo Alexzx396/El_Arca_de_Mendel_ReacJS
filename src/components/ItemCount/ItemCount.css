@@ -1,10 +1,10 @@
-.count-selectors {
+.quantity-selectors {
     display:flex;
     justify-content:center;
     padding:20px;
 }
 
-.count-buttom {
+.quantity-buttom {
     color:white;
     background-color:green;
     border-radius:50px;
@@ -13,17 +13,17 @@
     margin:4px;
 }
 
-.count-buttom:disabled {
+.quantity-buttom:disabled {
     background-color:#9fc29a;
 }
 
-.count-display {
+.quantity-display {
     color:black;
     padding:10px;
     margin:5px 10px 5px 20px;
 }
 
-.count-add {
+.quantity-add {
     color:green;
     background-color:lightgray;
     border-radius:10px;

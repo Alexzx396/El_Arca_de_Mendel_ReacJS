@@ -5,27 +5,30 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
 
-    const [detail, setDetail] = useState([])
-
+    const [detail, setItemDetail] = useState([])
+    const [loading, setLoading] = useState(true);
     const {productId} = useParams()
+
 
     useEffect(() => {
         GetFetchDetail
-        .then(response => {
-            setDetail(response.find(prod => prod.id === productId))
-        })
+        .then(response => {setItemDetail(response.find(item => item.id === productId))})
         .catch (error => alert("Error:", error))
-        .finally(()=> console.log(false))
+        .finally(()=> setLoading(false))
         
         
     },[productId])  
     
-    console.log(detail, 'Soy el producto en el container')
+   
 
     return (
             <div className="detail-container">
-                <ItemDetail detail={detail}/>
+                { loading
+                ? <h2 className="loading">El detalle del producto se está cargando</h2>
+                : <ItemDetail detail={detail}/>
+            }
             </div>
+            
     )
 }
 

@@ -6,32 +6,34 @@ import './ItemListContainer.css';
 
 const ItemListContainer = () => {
 
-    const [product, setProduct] = useState([])
-
+    const [itemList, setItemList] = useState([])
+    const [loading, setLoading] = useState(true);
     const {categoryId} = useParams()
 
     useEffect(() => {
 
         if (categoryId) {
             GetFetchList
-            .then(response => {       
-                setProduct(response.filter(prod => prod.categorie === categoryId))
-            })
+            .then(response => { setItemList(response.filter(item => item.categorie === categoryId))})
             .catch (error => alert("Error:", error)) 
+            .finally(()=> setLoading(false))
         }
         
         else {
             GetFetchList
-            .then(response => {        
-                setProduct(response)
-            })
+            .then(response => { setItemList(response) })
             .catch (error => alert("Error:", error))
+            .finally(()=> setLoading(false))
         }
+
     },[categoryId])
 
     return (
             <div className="list-container">
-                <ItemList product={product}/>
+                {loading
+                ? <h2 className="loading">Los productos se están cargando</h2>
+                : <ItemList itemList={itemList}/>
+                }
             </div>
     )
 }
