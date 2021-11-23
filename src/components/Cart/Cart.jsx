@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {useCartContext} from '../../context/CartContext';
+import {useCartContext} from '../../components/CartContext/CartContext';
 import {Link} from 'react-router-dom';
 import './Cart.css'; 
 
@@ -33,24 +33,24 @@ const Cart = () => {
                 }
                 > 
                 {cartList.map(itemAdded => 
-                    <div className="item-added-card" key={itemAdded.itemDetail.id} >
-                        <img className="item-added-img" src={itemAdded.itemDetail.pictureUrl} alt={itemAdded.itemDetail.title}/>
+                    <div className="item-added-card" key={itemAdded.detail.id} >
+                        <img className="item-added-img" src={itemAdded.detail.pictureUrl} alt={itemAdded.detail.title}/>
                         <div className="item-added-info">
-                            <h5 className="item-added-title">{itemAdded.itemDetail.title}</h5>
-                            <h6 className="item-added-brand">{itemAdded.itemDetail.brand}</h6>
-                            <p className="item-added-description">{itemAdded.itemDetail.description}</p>
-                            <p className="item-added-price">$ {itemAdded.itemDetail.price}</p>
+                            <h5 className="item-added-title">{itemAdded.detail.title}</h5>
+                            <h6 className="item-added-brand">{itemAdded.detail.brand}</h6>
+                            <p className="item-added-description">{itemAdded.detail.description}</p>
+                            <p className="item-added-price">$ {itemAdded.detail.price}</p>
                             <p className="item-added-quantity">Cantidad: {itemAdded.quantity}</p>
                         </div>
                         <div>
-                            <button className="remove-item" onClick={() => removeItem(itemAdded.itemDetail.id)}>Eliminar producto</button>
+                            <button className="remove-item" onClick={() => removeItem(itemAdded.detail.id)}>Eliminar producto</button>
                         </div>
                     </div>
                 )}
                 <div>
                     <p className="cart-total">Total de la compra: $ {cartTotal}</p>
                 </div>
-                <UserForm createOrder={createOrder}/>
+                {/* <UserForm createOrder={createOrder}/> */}
             </div>
         </div>
     )

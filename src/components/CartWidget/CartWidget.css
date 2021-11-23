@@ -1,6 +1,23 @@
-/* .navbar-cart {
-    
+.cartwidget-container {
+    text-decoration:none;
+}
+
+.cartwidget {
+    background-color:rgb(115, 202, 0);
     padding:15px;
+    border-radius:20px;
     border-style:none;
-    width: 100px;
-} */
+    display:flex;
+    flex-direction:row;
+}
+
+.cartwidget-quantity {
+    color:#BE1931;
+    background-color:white;
+    border-radius:50%;
+    border-style:none;
+    display:flex;
+    flex-direction:row;
+    font-size:18px;
+    padding:10%;
+}
