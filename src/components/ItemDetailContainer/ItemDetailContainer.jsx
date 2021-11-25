@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom'
-import GetFetchDetail from '../../services/GetFetchDetail';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import {getFirestore} from '../../services/GetFirestore';
+
 
 const ItemDetailContainer = () => {
 
@@ -11,15 +12,17 @@ const ItemDetailContainer = () => {
 
 
     useEffect(() => {
-        GetFetchDetail
-        .then(response => {setItemDetail(response.find(item => item.id === productId))})
+
+        const dataBase = getFirestore()
+
+        dataBase.collection("Items").doc(productId).get()
+        .then(item => setItemDetail({id:item.id, ...item.data()}))
         .catch (error => alert("Error:", error))
         .finally(()=> setLoading(false))
         
         
     },[productId])  
     
-   
 
     return (
             <div className="detail-container">

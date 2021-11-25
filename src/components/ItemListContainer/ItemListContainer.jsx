@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom'
-import GetFetchList from '../../services/GetFetchList';
 import ItemList from '../ItemList/ItemList';
+import {getFirestore} from '../../services/GetFirestore';
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
@@ -12,18 +12,28 @@ const ItemListContainer = () => {
 
     useEffect(() => {
 
+        const dataBase = getFirestore() 
+
         if (categoryId) {
-            GetFetchList
-            .then(response => { setItemList(response.filter(item => item.categorie === categoryId))})
+
+            const dataBaseByCategory= dataBase.collection("Items").where("categorie", "==", categoryId).get()
+           
+            dataBaseByCategory
+            .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
             .catch (error => alert("Error:", error)) 
             .finally(()=> setLoading(false))
         }
         
         else {
-            GetFetchList
-            .then(response => { setItemList(response) })
+
+            const totalDataBase = dataBase.collection("Items").orderBy("categorie").get()
+
+            totalDataBase
+
+            .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
             .catch (error => alert("Error:", error))
             .finally(()=> setLoading(false))
+      
         }
 
     },[categoryId])

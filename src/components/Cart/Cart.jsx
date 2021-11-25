@@ -1,14 +1,60 @@
 import {useState} from 'react';
 import {useCartContext} from '../../components/CartContext/CartContext';
 import {Link} from 'react-router-dom';
+import UseForm from '../UseForm/UseForm';
 import './Cart.css'; 
+import {getFirestore} from '../../services/GetFirestore';
+import firebase from 'firebase';
+import 'firebase/firestore';
+
 
 const Cart = () => {
 
-    const [orderId] = useState("");
+    const [orderId, setOrderId] = useState("");
     const {cartList, removeItem, removeCart, cartTotal, userData} = useCartContext();
 
+    const createOrder = (e) => {
+
+    e.preventDefault()
+
+    let order = {}
+    order.date = firebase.firestore.Timestamp.fromDate(new Date());
+    order.buyer = userData;
+    order.total = cartTotal;
+    order.items = cartList.map(itemAdded => {
+        const id = itemAdded.detail.id;
+        const title = itemAdded.detail.title;
+        const quantity = itemAdded.quantity;
+        const subtotal = itemAdded.detail.price * itemAdded.quantity;
+        return {id, title, quantity, subtotal}
+    })
+
+
+    const dataBase = getFirestore()
+
+    dataBase.collection("orders").add(order)
+    .then(response => setOrderId(response.id))
+    .catch (error => alert("Error:", error))
+    .finally(() => removeCart())
+
+    const updateStock = dataBase.collection("items").where
+    (firebase.firestore.FieldPath.documentId(), "in", cartList.map(idToUpdate => idToUpdate.detail.id))
+
+    const batch = dataBase.batch();
+
+    updateStock.get()
+    .then(response => {
+        response.docs.forEach(docSnapshot => {
+            batch.update(docSnapshot.ref, {
+            stock: docSnapshot.data().stock - cartList.find(idToUpdate => idToUpdate.detail.id === docSnapshot.id).quantity
+            })
+    })
     
+    batch.commit()
+    .catch (error => alert("Error:", error))
+    })
+}
+
     return (
 
         <div>
@@ -50,7 +96,7 @@ const Cart = () => {
                 <div>
                     <p className="cart-total">Total de la compra: $ {cartTotal}</p>
                 </div>
-                {/* <UserForm createOrder={createOrder}/> */}
+                <UseForm createOrder={createOrder}/>
             </div>
         </div>
     )
