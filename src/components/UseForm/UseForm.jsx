@@ -8,25 +8,47 @@ const UserForm = ({createOrder}) =>{
     return (
         <form id="date-orden" onChange={handleForm} onSubmit={createOrder}><hr />
             <legend  className="form-legend">Ingresá tus datos</legend>
-            <div id="date-orden">
-                <br />
-                <label htmlFor="name" className="form-label">Nombre</label>
-                <input type="text" name="name" placeholder="" defaultValue={userData.name}/>
-            </div>
-            <div id="date-orden">
-                <label htmlFor="surname" className="form-label">Apellido</label>
-                <input type="text" name="surname" placeholder="" defaultValue={userData.surname}/>
-            </div>
-            <div id="date-orden">
-                <label htmlFor="phone" className="form-label">Teléfono</label>
-                <input type="text" name="phone" placeholder="" defaultValue={userData.phone}/> 
-            </div>
-            <div id="date-orden">
-                <label htmlFor="email" className="form-label">Email</label>
-                <input type="email" name="email" placeholder="" defaultValue={userData.email}/>
-                <p>*fabor revisar bien sus datos, Gracias!</p>
-            </div>
-            <button className="buy-buttom">¡Comprar!</button><hr />
+                <div className="col-md-3">
+                    <input 
+                        id="date-orden"
+                        type="text" 
+                        placeholder="Nombre" 
+                        className="form-control" 
+                        name="name" 
+                        defaultValue={userData.name}
+                        />
+                </div>
+                <div className="col-md-3">
+                    <input 
+                        id="date-orden"
+                        type="text" 
+                        placeholder="Apellido" 
+                        className="form-control" 
+                        name="surname" 
+                        defaultValue={userData.surname}
+                        />
+                </div>
+                <div className="col-md-3">
+                    <input 
+                        id="date-orden"
+                        type="text" 
+                        placeholder="Fono" 
+                        className="form-control" 
+                        name="phone"
+                        defaultValue={userData.phone}
+                        />
+                </div>
+                <div className="col-md-3">
+                    <input 
+                        id="date-orden"
+                        type="text" 
+                        placeholder="Correo" 
+                        className="form-control" 
+                        name="email"
+                        defaultValue={userData.email}
+                        />
+                </div>
+                    <button type="submit" className="btn btn-outline-danger">¡Comprar!</button><hr />
             
         </form>
     )

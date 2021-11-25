@@ -6,9 +6,9 @@ import './ItemListContainer.css';
 
 const ItemListContainer = () => {
 
-    const [itemList, setItemList] = useState([])
+    const [itemList, setItemList] = useState([]);
     const [loading, setLoading] = useState(true);
-    const {categoryId} = useParams()
+    const {categoryId} = useParams();
 
     useEffect(() => {
 
@@ -39,11 +39,13 @@ const ItemListContainer = () => {
     },[categoryId])
 
     return (
-            <div className="list-container">
-                {loading
-                ? <h2 className="loading">Los productos se están cargando</h2>
-                : <ItemList itemList={itemList}/>
-                }
+            <div className="list-container" >
+                <div >
+                    {loading
+                    ? <h2 className="loading">Los productos se están cargando</h2>
+                    : <ItemList itemList={itemList}/>
+                    }
+                </div>
             </div>
     )
 }

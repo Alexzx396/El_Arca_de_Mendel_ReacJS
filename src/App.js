@@ -23,6 +23,7 @@ function App() {
         </Switch>
       </BrowserRouter>
       </CartContextProvider>
+      {/* <Footer /> */}
     </div>
   );
 }

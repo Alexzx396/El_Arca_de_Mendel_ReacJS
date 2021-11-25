@@ -10,7 +10,7 @@ const CartContextProvider = ({children}) => {
     
     const [itemQuantity, setItemQuantity] = useState(0);
     const [cartTotal, setCartTotal] = useState(0);
-    const [cartList, setCartList] = useState([])
+    const [cartList, setCartList] = useState([]);
     const [userData, setUserData] = useState({name:"", surname:"", phone:"", email:""});
 
     const addToCartList = itemAdded => {
