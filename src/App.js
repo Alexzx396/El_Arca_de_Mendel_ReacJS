@@ -5,26 +5,31 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CartContextProvider from './components/CartContext/CartContext';
 import Cart from './components/Cart/Cart';
 import './App.css';
+import { FooterContainer } from './containers/footer'
 
 
 function App() {
   return (
     <div className="App">
-      <CartContextProvider >
+    
+    <CartContextProvider >
         <BrowserRouter>
          <NavBar/>
-          <Switch>
-            <Route exact path="/">
-              <ItemListContainer/>
-            </Route>
-            <Route exact path="/categoria/:categoryId" component={ItemListContainer}/>
-            <Route exact path="/producto/:productId" component={ItemDetailContainer}/>
-            <Route exact path="/cart" component={Cart}/>
-        </Switch>
-      </BrowserRouter>
-      </CartContextProvider>
-      {/* <Footer /> */}
+            <Switch>
+                <Route exact path="/">
+                  <ItemListContainer/>
+                </Route>
+                <Route exact path="/categoria/:categoryId" component={ItemListContainer}/>
+                <Route exact path="/producto/:productId" component={ItemDetailContainer}/>
+                <Route exact path="/cart" component={Cart}/>
+            </Switch>
+        </BrowserRouter>
+      <FooterContainer />
+    </CartContextProvider>
+    
     </div>
+    
+    
   );
 }
 
