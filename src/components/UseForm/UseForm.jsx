@@ -48,6 +48,16 @@ const UserForm = ({createOrder}) =>{
                         defaultValue={userData.email}
                         />
                 </div>
+                <div className="col-md-3">
+                    <input 
+                        id="date-orden"
+                        type="text" 
+                        placeholder="Direccion" 
+                        className="form-control" 
+                        name="adress"
+                        defaultValue={userData.adress}
+                        />
+                </div>
                     <button type="submit" className="btn btn-outline-danger">¡Comprar!</button><hr />
             
         </form>

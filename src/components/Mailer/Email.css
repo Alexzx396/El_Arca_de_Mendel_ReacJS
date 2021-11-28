@@ -1,0 +1,20 @@
+#email{
+    margin-top: 25px;
+    margin-bottom: 50px;
+    width: 70%;
+    background-image: url(https://static9.depositphotos.com/1000123/1134/i/600/depositphotos_11347747-stock-photo-under-the-bright-sun-abstract.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#title-email{
+    margin-top: 25px;
+}
+
+#email-form{
+    margin: 25px 85px 75px 100px;
+}
+
+#email-message{
+    margin: 25px 0px 0px 0px;
+}

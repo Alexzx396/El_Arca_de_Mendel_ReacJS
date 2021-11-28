@@ -5,14 +5,16 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CartContextProvider from './components/CartContext/CartContext';
 import Cart from './components/Cart/Cart';
 import './App.css';
-import { FooterContainer } from './containers/footer'
+import { FooterContainer } from './containers/footer';
+import Mailer from './components/Mailer/Mailer';
+import { Nosotros } from './components/Nosotros/Nosotros';
 
 
 function App() {
   return (
     <div className="App">
     
-    <CartContextProvider >
+  <CartContextProvider >
         <BrowserRouter>
          <NavBar/>
             <Switch>
@@ -22,10 +24,12 @@ function App() {
                 <Route exact path="/categoria/:categoryId" component={ItemListContainer}/>
                 <Route exact path="/producto/:productId" component={ItemDetailContainer}/>
                 <Route exact path="/cart" component={Cart}/>
+                <Route exact path="/mailer" component={Mailer}/>
+                <Route exact path="/Nosotros" component={Nosotros}/>
             </Switch>
-        </BrowserRouter>
+         </BrowserRouter>
       <FooterContainer />
-    </CartContextProvider>
+  </CartContextProvider>
     
     </div>
     
