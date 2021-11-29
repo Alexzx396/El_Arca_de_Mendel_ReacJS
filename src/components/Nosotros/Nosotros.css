@@ -1,0 +1,13 @@
+*{
+    font-family: monospace, Helvetica, Sans-serif ;
+}
+
+
+.text-nosotros { 
+    
+    background-color: #eee;
+    margin: 20px 30px 30px 0px;
+    padding: 40px;
+    line-height:1.5;
+    line-break: auto;
+   } 

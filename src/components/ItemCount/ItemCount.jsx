@@ -15,11 +15,12 @@ const ItemCount = ({initial, stock, addToCart}) =>{
         setQuantity(quantity-1);     
     }   
     
+    
     const addToCartHandler = ()=> { 
         alert(`Agregaste ${quantity} producto(s) a tu carrito`)
         addToCart(quantity)
         setCambiarBoton(true)       
-}
+    }
 
 
     
