@@ -1,4 +1,8 @@
-* este proyecto (en desarrollo) tiene solo una rama
+E-coomers venta de semillas
+
+---------------------------------------------------------------
+
+**este proyecto (en desarrollo) tiene solo una rama
 
 Objetivo: 
 
@@ -10,7 +14,7 @@ Javascript
 Html5
 Css3
 GitHub
-React js => esta App fue creada con => create react App
+React js => esta App fue creada con => create-react-App
 
 Estado del Proyecto:
 
@@ -30,6 +34,15 @@ Servies => {
       GetFetchDetail => En esta seccion estan los productos finales (contiene el catalogo) (id, categorias, title, price, pictureUrl, stock) }
       
 			
+Librerias externas a create-react-app => {
+  Boostrap 5: Simplificar las estilos solo agregando cdn.
+  Firebase: libreria de servicios, que nos facilita, y nos   permite desarrollar el fron-end, sin preocuparnos del back-end. nos facilita esta solucion altamente desarrollada y probada.
+  React-router-dom: usado para el sistema de navegacion entre pagigas para que este funcione como spa.
+  emailjs: este componente nos ayuda con el correo de la pagina, nos envia correos a el propietario con alguna duda del cliente. 
+  styled-componets: nos ayuda a traer componentes completos a nuestra pagina, con extractos de codigo, esta ocacion se utilizo para el footer. 
+  react-boostrap
+}
+
 Avance del proyecto:
 
 Home =>

@@ -8,10 +8,10 @@ const Item = ({item}) => {
                 <div>
                   <Link to={`/producto/${item.id}`}><img className="item-img" src={item.pictureUrl} alt={item.title}/></Link>   
                 </div>
-                <br />
-                <h5 className="item-title">{item.title}</h5>
-                <p className="item-price">$ {item.price}</p>
-                <Link to={`/producto/${item.id}`}><button src={item.description} className="item-buttom">Más información</button></Link> 
+                    <br />
+                    <h5 className="item-title">{item.title}</h5>
+                    <p className="item-price">$ {item.price}</p>
+                    <Link to={`/producto/${item.id}`}><button src={item.description} className="item-buttom">Más información</button></Link> 
             </div> 
     )
 }

@@ -33,9 +33,9 @@ const Cart = () => {
     const dataBase = getFirestore()
 
     dataBase.collection("orders").add(order)
-    .then(response => setOrderId(response.id))
-    .catch (error => alert("Error:", error))
-    .finally(() => removeCart())
+        .then(response => setOrderId(response.id))
+        .catch (error => alert("Error:", error))
+        .finally(() => removeCart())
 
     const updateStock = dataBase.collection("items").where
     (firebase.firestore.FieldPath.documentId(), "in", cartList.map(idToUpdate => idToUpdate.detail.id))
@@ -51,9 +51,9 @@ const Cart = () => {
     })
     
     batch.commit()
-    .catch (error => alert("Error:", error))
-    })
-}
+        .catch (error => alert("Error:", error))
+        })
+    }
 
     return (
 
@@ -63,18 +63,20 @@ const Cart = () => {
             : orderId===""
                 ? <div>
                 <p className="empty-cart">El carrito está vacío</p>
+                
                 <Link className="go-to-home" to="/"> Ir al inicio</Link>
                 </div>
+                
                 : <div>
                 <p className="empty-cart">¡Gracias por la compra!</p><hr />
-                <p>Datos de depocito</p>
-                <p>Nombre: Alex Arce suarez</p>
-                <p>Rut: 17.678.812-7</p>
-                <p>Banco: Banco Estado</p>
-                <p>Correo: a.l.e.x_91@hotmail.com</p>
-                <p>*Fabor enviarnos tu comprobante a nuestro correo</p><hr />
-                <p className="order-id">Tu código de operación es: {orderId}</p>
-                <Link type="button" class="btn btn-success" to="/"> Ir al inicio</Link>
+                    <p>Datos de depocito</p>
+                    <p>Nombre: Alex Arce suarez</p>
+                    <p>Rut: 17.678.812-7</p>
+                    <p>Banco: Banco Estado</p>
+                    <p>Correo: a.l.e.x_91@hotmail.com</p>
+                    <p>*Fabor enviarnos tu comprobante a nuestro correo</p><hr />
+                <p className="order-id">Tu código de operación es: {orderId}</p><br />
+                    <Link type="button" class="btn btn-success" to="/"> Ir al inicio</Link>
                 </div>
             }
             
@@ -99,9 +101,9 @@ const Cart = () => {
                         </div>
                     </div>
                 )}
-                <div>
-                    <p className="cart-total">Total de la compra: $ {cartTotal}</p>
-                </div>
+                    <div>
+                        <p className="cart-total">Total de la compra: $ {cartTotal}</p>
+                    </div>
                 <UseForm createOrder={createOrder}/>
             </div>
         </div>

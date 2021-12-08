@@ -9,7 +9,7 @@ export function FooterContainer() {
             <Footer.Row>
                 <Footer.Column>
                 <Footer.Title>About Us</Footer.Title>
-                    <Footer.Link href="#">Story</Footer.Link>
+                    <Footer.Link to="../../../Nosotros/Nosotros.jsx" href="#">Nosotros</Footer.Link>
                     <Footer.Link href="#">Clients</Footer.Link>
                     <Footer.Link href="#">Testimonials</Footer.Link>
                 </Footer.Column>
@@ -22,7 +22,7 @@ export function FooterContainer() {
                 </Footer.Column>
                 <Footer.Column>
                 <Footer.Title>Contact Us</Footer.Title>
-                    <Footer.Link href="#">United States</Footer.Link>
+                    <Footer.Link href="#">Chile</Footer.Link>
                     <Footer.Link href="#">United Kingdom</Footer.Link>
                     <Footer.Link href="#">Australia</Footer.Link>
                     <Footer.Link href="#">Support</Footer.Link>

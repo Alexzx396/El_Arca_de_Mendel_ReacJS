@@ -4,7 +4,7 @@ import './CartWidget.css';
 
 const CartWidget = () => {
 
-        const {itemQuantity} = useCartContext()
+    const {itemQuantity} = useCartContext()
 
             return (
                 <Link to="/cart" className="cartwidget-container">

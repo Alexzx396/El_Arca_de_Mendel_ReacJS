@@ -16,10 +16,10 @@ const ItemDetailContainer = () => {
         const dataBase = getFirestore()
 
         dataBase.collection("Items").doc(productId).get()
-        .then(item => setItemDetail({id:item.id, ...item.data()}))
-        .catch (error => alert("Error:", error))
-        .finally(()=> setLoading(false))
-        
+            .then(item => setItemDetail({id:item.id, ...item.data()}))
+            .catch (error => alert("Error:", error))
+            .finally(()=> setLoading(false))
+            
         
     },[productId])  
     
@@ -27,9 +27,9 @@ const ItemDetailContainer = () => {
     return (
             <div className="detail-container">
                 { loading
-                ? <h2 className="loading">El detalle del producto se está cargando</h2>
-                : <ItemDetail detail={detail}/>
-            }
+                    ? <h2 className="loading">El detalle del producto se está cargando</h2>
+                    : <ItemDetail detail={detail}/>
+                }
             </div>
             
     )

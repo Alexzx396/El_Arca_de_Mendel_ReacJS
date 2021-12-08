@@ -19,10 +19,10 @@ const ItemListContainer = () => {
             const dataBaseByCategory= dataBase.collection("Items").where("categorie", "==", categoryId).get()
            
             dataBaseByCategory
-            .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
-            .catch (error => alert("Error:", error)) 
-            .finally(()=> setLoading(false))
-        }
+                .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
+                .catch (error => alert("Error:", error)) 
+                .finally(()=> setLoading(false))
+            }
         
         else {
 
@@ -30,9 +30,9 @@ const ItemListContainer = () => {
 
             totalDataBase
 
-            .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
-            .catch (error => alert("Error:", error))
-            .finally(()=> setLoading(false))
+                .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
+                .catch (error => alert("Error:", error))
+                .finally(()=> setLoading(false))
       
         }
 

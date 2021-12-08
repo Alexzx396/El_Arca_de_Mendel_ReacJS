@@ -20,7 +20,7 @@ const ItemDetail = ({detail}) => {
         <div>
             <div className="item-detail-card" >
              
-                    <img className="item-detail-img" src={detail.pictureUrl} alt={detail.title}/>
+                <img className="item-detail-img" src={detail.pictureUrl} alt={detail.title}/>
                     <div>
                         
                         <h1 className="item-detail-title">{detail.title}</h1>
@@ -30,10 +30,10 @@ const ItemDetail = ({detail}) => {
                         <h6 className="item-detail-brand">{detail.brand}</h6>
                         
                     </div>
+                <div>
                     <div>
-                        <div>
-                          <ItemCount initial={quantity} stock={detail.stock} addToCart={addToCart}/>
-                        </div> 
+                        <ItemCount initial={quantity} stock={detail.stock} addToCart={addToCart}/>
+                    </div> 
                         <button className="item-detail-stock" disabled>
                         {detail.stock} Unidades Disponibles </button>
                         <h6 className="item-title"> Medios de Pago </h6>   
@@ -41,8 +41,7 @@ const ItemDetail = ({detail}) => {
                         src={"/assets/mediosPago/medios-de-pago-chile.png"}
                         alt="Medios de Pago" className="item-detail-img-mediospago" />
                         
-                    </div>
-                        
+                </div>        
             </div>
         </div>
     )
